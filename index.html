@@ -13,7 +13,7 @@
         let computerPoint = 0;
         game();
         function game(){
-            while (playerPoint+computerPoint < 5){
+            while (playerPoint < 3 && computerPoint < 3){
                 computerChoice = getComputerChoice();
                 playerChoice = prompt("Rock, paper or scissor?");
                 playerChoice = correctCase(playerChoice);
