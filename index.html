@@ -2,110 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock - Paper - Scissor</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <script>
-        let playerChoice;
-        let computerChoice;
-        let playerPoint = 0;
-        let computerPoint = 0;
-        game();
-        function game(){
-            while (playerPoint < 3 && computerPoint < 3){
-                computerChoice = getComputerChoice();
-                playerChoice = prompt("Rock, paper or scissor?");
-                playerChoice = correctCase(playerChoice);
-                checkPlayerChoice(playerChoice);
-                console.log("Puntos del jugador: "+playerPoint);
-                console.log("Puntos de la computadora: "+computerPoint);
-            }
-            if(playerPoint>computerPoint){
-                console.log("El jugador gana!!");
-            } else if(playerPoint==computerPoint){
-                console.log("Empate!!");
-            } else {
-                console.log("Gana la computadora!!");
-            }
-        }
+<h1>Rock - Paper - Scissor</h1>
+<h2>Get 5 points to win!!</h2>
+    <div class="choices">
+            <button class="rockButton butt">Rock</button>
+            <button class="paperButton butt">Paper</button>
+            <button class="scissorButton butt">Scissor</button>
+    </div>
+<div class="results">
+
+</div>
 
 
-        function correctCase(string){
-            let newString = string.charAt(0).toUpperCase();
+<script src="./script.js"></script>
 
-            for(let i = 1; i < string.length; i++){
-                let a = string.charAt(i).toLowerCase();
-                newString = newString + a;
-            }
-            return newString;
-        }
-
-        function checkPlayerChoice(choice){
-            if(choice != "Rock" && choice != "Paper" && choice != "Scissor"){
-                console.log("Eres pendejo, escribe bien!!!");
-            } else{
-                round(choice, computerChoice);
-            }
-        }
-
-        function getComputerChoice(){
-            let a = Math.floor(Math.random()*3);
-            switch(a){
-                case 0:
-                    return "Paper";
-                case 1:
-                    return "Scissor";
-                case 2:
-                    return "Rock";
-            }
-        }
-        function round(playerChoice, computerChoice){
-            console.log("Jugador saca: "+playerChoice);
-            console.log("Computadora saca: "+computerChoice);
-
-            console.log(whoWins(playerChoice, computerChoice));
-        }
-
-        function whoWins(a, b){
-            if(a === "Paper"){
-                switch(b){
-                    case "Paper":
-                        return "Empate";
-                    case "Rock":
-                        playerPoint++;
-                        return "Gana el jugador!!";
-                    case "Scissor":
-                        computerPoint++;
-                        return "El jugador pierde!!";
-                }
-            }
-            if(a === "Rock"){
-                switch(b){
-                    case "Paper":
-                    computerPoint++;
-                    return "El jugador pierde!!";
-                    case "Rock":
-                    return "Empate";
-                    case "Scissor":
-                        playerPoint++;
-                        return "Gana el jugador!!";
-                }
-            }
-            if(a === "Scissor"){
-                switch(b){
-                    case "Paper":
-                    playerPoint++;
-                    return "Gana el jugador!!";
-                    case "Rock":
-                    computerPoint++;
-                    return "El jugador pierde!!";
-                    case "Scissor":
-                    return "Empate";
-                }
-            }
-        }
-
-    </script>
 </body>
 </html>

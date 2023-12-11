@@ -1,0 +1,32 @@
+*{
+box-sizing: border-box;
+}
+
+
+h1, h2{
+    text-align: center;
+}
+
+div{
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px 50px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.choices{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.butt{
+    flex:1;
+}
+
+p{
+    text-align: center;
+}
+
